@@ -10,6 +10,10 @@ In order to avoid conflicts during git push
 ## Dep updates
 1. Major libs version needs to be revisisted once per month
 
+## CI/CD
+
+The project includes a CI/CD pipeline for automating testing, building, and deployment processes. The pipeline is defined in the ci-cd.yaml file located in the .github/workflows directory. It runs tests on each commit and pull request and triggers deployments based on predefined conditions.
+
 # How to
 1. Setup your env
 1.1 Create venv into .vevn folder
