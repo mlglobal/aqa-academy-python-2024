@@ -9,7 +9,7 @@ class GitHubUI(BaseApp):
         super().__init__(browser)
 
         self.login_page = LoginPage(self)
-        self.signup_page = SignUpPage(self)
+        # self.signup_page = SignUpPage(self)
 
     def try_login(self, username: str, password: str):
         return self.login_page.try_login(username, password)
@@ -19,6 +19,9 @@ class GitHubUI(BaseApp):
 
     def create_user(self):
         pass
+
+    def open(self):
+        self.login_page.navigate_to()
 
     def close(self):
         self.close_browser()

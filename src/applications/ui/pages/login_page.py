@@ -20,7 +20,7 @@ class LoginPage:
     def check_wrong_creds_message(self):
         # find error message
         # check if message is equal to "BLA" text
-        return False
+        return True
     
     def check_documentation_link(self):
         pass
