@@ -12,23 +12,18 @@ class BaseApp:
 
     def wait_and_click(self, locator, timeout=15):
         # read what is implicit and explisit waiters
-        elem = self.browser.find_element(locator)
-        elem.click()
-        
-        return True        
+        elem = self.browser.find_element(By.XPATH, locator)
+        elem.click()   
     
     def enter_text(self, locator, text):
-        elem = self.browser.find_element(locator)
+        elem = self.browser.find_element(By.XPATH, locator)
         elem.clear()
         elem.send_keys(text)
-        
-        if elem.text != text:
-            raise RuntimeError(f"Text {text} is not entered to {locator} element")
-        
-        elem.send_keys(Keys.RETURN)
-        
-        return True 
 
+    def change_to_text(self, locator):
+        elem = self.browser.find_element(By.XPATH, locator)
+        return elem.text
+        
     def close_browser(self):
         self.browser.close()       
     
